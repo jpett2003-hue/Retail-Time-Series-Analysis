@@ -1,0 +1,388 @@
+---
+title: "RP_v4"
+author: "Jordan Pett"
+date: "2025-05-30"
+output:
+  pdf_document: 
+    latex_engine: xelatex
+  html_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(fpp3)
+library(readxl)
+library(dplyr)
+library(tsibble)
+library(fabletools)
+get_my_data <- function(student_id) {
+  set.seed(33165750)
+  all_data <- readr::read_rds("https://bit.ly/monashretaildata")
+  while(TRUE) {
+    retail <- filter(all_data, `Series ID` == sample(all_data$`Series ID`, 1))
+    if (!any(is.na(fill_gaps(retail)$Turnover))) return(retail)
+  }
+}
+retail <- get_my_data(33165750)
+
+```
+
+
+# Q1 and 2
+
+```{r}
+retail %>% 
+  autoplot(Turnover) 
+```
+
+We can see the plot has an upward trend until roughly 2008-2009, where Turnover drastically drops. This matches around the time of the 2008 financial crisis. There is also a large dip around the COVID-19 outbreak (2020-2021). However it quickly bounces back this time, potentially due to shoppers adapting and choosing to purchase online.
+
+We can also see increasing variability as time passes.
+
+The plot shows regular repeating patterns, indicating seasonal effects.
+
+
+```{r}
+retail %>% 
+  gg_season(Turnover)
+```
+
+Strong seasonality appears to be present, with turnover starting to increase at the end of the year during the holiday period, as well as the middle of year.
+
+There appears to be a peak in turnover at the end of the year, and a slightly lower peak in the middle during June. The peak at the end of the year makes sense given that turnover is generally higher during holiday period.
+
+The overall trend suggests growth in turnover over time, with turnover steadily increasing every month over the years. This aligns with the long-term upward trend seen in the previous time series plot.
+
+More recent years (2021, 2011) show more volatility and variability compared to earlier years (1991, 2001), supporting the observation made from observing the previous plot.
+
+
+```{r}
+retail %>% 
+  gg_subseries(Turnover)
+```
+
+Each month follows an increasing trend over time. This confirms that retail turnover is growing consistently, regardless of the month.
+
+The December and November panels shows the highest peaks, reinforcing the holiday shopping effect. This suggests a strong seasonal peak in retail sales.
+
+Each month appears to have similar behaviour throughout the decades. Strong seasonality is apparent.
+
+
+
+# Q3
+
+```{r}
+retail %>%
+  features(Turnover, features = guerrero) %>% 
+  select(lambda_guerrero)
+```
+
+This means that for the given Turnover time series, the Guerrero method suggests a Box-Cox transformation parameter (λ lambda) of approximately 0.017. 
+
+With the λ lambda parameter being close to 0, we should use a log transformation since it should be most appropriate for variance stabilisation.
+
+Now we will apply Box-Cox transformation using the given lambda value.
+
+```{r}
+retail_bc <- retail %>%
+  mutate(BoxCox_Turnover = box_cox(Turnover, lambda = 0.017))
+
+retail_bc %>%
+  select(Month, Turnover, BoxCox_Turnover) %>%
+  pivot_longer(cols = c(Turnover, BoxCox_Turnover)) %>%
+  autoplot(value) +
+  facet_wrap(~name, scales = "free_y") +
+  labs(title = "Box-Cox Transformed Turnover vs Original")
+```
+
+The plot has a noticeably more stable variance over time compared to the original data. This confirms that the Box-Cox transformation is effective in stabilising the variance, thus addressing heteroskedasticity.
+
+
+
+# Q4
+
+```{r}
+dcomp <- retail_bc %>% 
+  model(stl = STL(BoxCox_Turnover ~ trend(window = 13) + season(window = "periodic"), robust = TRUE))
+components(dcomp) %>% autoplot + labs(title = "STL decompisition: Turnover")
+```
+
+The top panel of the STL decompisition shows a general upward trend and potential seasonality
+
+The second panel shows there are periods with slight dips, but there is general upward movement in the trend with slight variation 
+
+Setting trend(window = 13) smooths over roughly a year. A 13-month window for the trend component used to smooth short-term fluctuations while preserving the long-term trend.
+
+The third panel shows consistent seasonality, steadily increasing until roughly April where it dips slightly, to be followed up with another upward trend until roughly October, where it drastically decreases
+
+With 'robust = TRUE', we have ensured that the occasional unusual observations will not affect the estimates of the trend-cycle and seasonal components.They will, however, affect the remainder component.
+
+The fourth panel appears that the remainder component could be white noise, with a few spikes.
+
+```{r}
+residuals_tsibble <- components(dcomp) %>%
+  select(remainder) %>%
+  as_tsibble()
+
+residuals_acf <- residuals_tsibble %>% 
+  ACF(remainder)
+
+residuals_acf %>% 
+  autoplot() + 
+  labs(title = "White Noise Test")
+```
+
+Since some of the autocorrelation coefficients lie outside these limits, we can confirm that the data is not white noise.
+
+
+
+# Q5
+
+```{r}
+fit5.2 <- retail_bc %>%
+  model(
+    auto = ARIMA(BoxCox_Turnover, stepwise = FALSE, approximation = FALSE)
+  )
+report(fit5.2)
+```
+
+The ARIMA() function uses unitroot_nsdiffs() to determine D, (the number of seasonal differences to use), and unitroot_ndiffs() to determine d (the number of ordinary differences to use), when these are not specified. The selection of the other model parameters (p,q,P and Q) are all determined by minimizing the AICc, as with non-seasonal ARIMA models.
+
+In any case, the output has determined that 1 seasonal and 1 ordinary difference is most optimal.
+
+However as seen below, when we speicically use unitroot_nsdiffs() and unitroot_nsdiffs(), we get different results:
+
+```{r}
+retail_bc %>% 
+  features(BoxCox_Turnover, unitroot_nsdiffs) %>% 
+  select(nsdiffs)
+
+retail_bc %>% 
+  features(BoxCox_Turnover, unitroot_ndiffs) %>% 
+  select(ndiffs)
+```
+
+Despite this, since model fitting process found that the model performed better without non-seasonal differencing, likely because the seasonal difference was sufficient to achieve stationarity.
+
+
+
+# Q6 and 7
+
+To create a short-list of appropriate ARIMA and ETS models, we will follow the following methodology :
+
+- Step 1:
+The full dataset was split into a training set and a test set. The training set included all observations up to December 2020, and the test set consisted of the final 24 months of data: January 2021 to December 2022.
+
+
+- Step 2: 
+Rather than manually testing various combinations, automated functions ARIMA() and ETS() were used to identify optimal models based on AIC. 
+
+
+- Step 3: 
+For the models residual diagnostics is conducted using ljung-Box tests to ensure no significant autocorrelation remains in residuals. In addition time plots and ACF plots of residuals are also used to check for randomness and constant variance.
+
+
+
+```{r}
+retail_train <- retail_bc %>% filter(Month < yearmonth("2021 Jan"))
+retail_test <- retail_bc %>% filter(Month >= yearmonth("2021 Jan"))
+```
+
+  
+The output below shows the model selected and estimated by ARIMA(). The ARIMA model does well in capturing all the dynamics in the data as the residuals seem to be white noise.
+
+```{r}
+fit_arima <- retail_train %>%
+  model(ARIMA = ARIMA(BoxCox_Turnover))
+
+report(fit_arima)
+
+fit_arima %>% gg_tsresiduals(lag_max = 24)
+```
+
+Looking at the residual plots, we can see that none of the autocorrelation coefficients lie outside the bounds of the ACF, meaning the the series is most likely white noise.
+
+We can confirm whther its white noise with a Ljung-Box test below
+
+```{r}
+augment(fit_arima) %>% 
+  features(.innov, ljung_box, lag = 12, dof = 6) %>% 
+  select(.model:lb_pvalue)
+```
+
+A Ljung-Box test (setting K = 6) returns a p-value larger than 0.05. This also confirms that the residuals are similar to white noise.
+
+
+The output below also shows the ETS model selected and estimated by ETS(). This model also does well in capturing all the dynamics in the data, as the residuals similarly appear to be white noise.
+
+```{r}
+fit_ets <- retail_train %>%
+  model(ETS = ETS(BoxCox_Turnover))
+
+report(fit_ets)
+
+fit_ets %>% 
+  gg_tsresiduals(lag_max = 24)
+```
+
+Looking at the residual plots, we can see that none of the autocorrelation coefficients lie outside the bounds of the ACF, meaning the the series is most likely white noise.
+
+We can confirm whether its white noise with a Ljung-Box test belo
+
+```{r}
+augment(fit_ets) %>% 
+  features(.innov, ljung_box, lag = 12) %>% 
+  select(.model:lb_pvalue)
+```
+
+A Ljung-Box test test returns a p-value larger than 0.05. This also confirms that the residuals are similar to white noise.
+
+The output below evaluates the forecasting performance of the two competing models over the test set. In this case the ETS model seems to be the slightly more accurate model based on the test set RMSE, MAPE and MASE.
+
+```{r}
+bind_rows(
+  glance(fit_arima),
+  glance(fit_ets)
+  ) %>% select(.model, AIC, AICc)
+
+
+bind_rows(
+    fit_arima %>%  accuracy(),
+    fit_ets %>% accuracy(),
+    fit_arima %>% forecast(h = 24) %>%  accuracy(retail_test),
+    fit_ets %>% forecast(h = 24) %>%  accuracy(retail_test)
+  ) %>% select(-State, -Industry, -ME, -MPE, -ACF1, -MASE, -RMSSE)
+```
+
+AIC/AICc values are used to compare model fit — lower values indicate a better-fitting model. The ARIMA model has a dramatically lower AIC/AICc than the ETS model — suggesting its overwhelmingly better in terms of fit to the data.
+
+
+On the training set, ARIMA performs very slightly better than ETS across all metrics. However, the differences are minimal, indicating that both models fit the training data similarly well.
+
+Once again on the test set (which reflects forecast accuracy), ARIMA again outperforms ETS by a slight but consistent margin across all 3 metrics.
+
+ARIMA is the better model overall, both in-sample and out-of-sample. While the differences aren't too large, ARIMA is more accurate, especially on the test set, which is more important for forecasting performance. This aligns with the previous analysis of model fit, where ARIMA was also superior.
+
+
+
+# Q8
+
+Based on the results, especially the test sets, the ARIMA model gives slightly better forecasts than the ETS model. It achieved lower values for all key accuracy metrics, indicating more accurate predictions. Although the differences are small, ARIMA consistently outperformed ETS on all measures, making it the preferred model for forecasting this data.
+
+
+
+# Q9 
+
+```{r}
+retail_bc <- retail %>%
+  mutate(BoxCox_Turnover = box_cox(Turnover, lambda = 0.017))
+
+#fit_full_arima <- retail_bc %>% model(ARIMA = ARIMA(BoxCox_Turnover))
+fit_full_arima <- retail %>% model(ARIMA = ARIMA(Turnover))
+fit_full_ets <- retail %>% model(ETS = ETS(Turnover))
+
+fc_arima <- forecast(fit_full_arima, h = "24 months") 
+fc_ets <- forecast(fit_full_ets, h = "24 months") 
+
+all_fc <- bind_rows(fc_arima, fc_ets)
+
+all_fc %>%
+  autoplot(retail) +
+  labs(title = "24-Month Forecasts using Full Data",
+       y = "Retail Turnover ($m)",
+       x = "Month") +
+  facet_wrap(~.model)
+```
+
+Can't really see too much so we'll focus on 2020 Jan to 2024 Dec, which is the last 24 months of actual data and 24 months of forecasts
+
+```{r}
+retail_2020 <- retail %>% filter_index("2020 Jan" ~ .)
+
+all_fc %>%
+  autoplot(retail_2020) +
+  labs(
+    title = "Retail Turnover Forecasts (24 Months Ahead)",
+    y = "Turnover ($m)",
+    x = "Month"
+  ) +
+  facet_wrap(vars(.model), scales = "free_y")  # Separate plots per model
+```
+
+Filtering the data allowed us to see the models more clearly, allowing us to more effectively compare them and draw conclusions
+
+
+
+# Q10
+
+```{r}
+fc_comp <- all_fc %>%
+  filter(Month >= yearmonth("2023 Jan"), Month <= yearmonth("2024 Dec"))
+
+abs_data <- read_excel("ABS data.xlsx") %>%
+  mutate(Month = yearmonth(Month))
+
+abs_recent <- abs_data %>%
+  filter(Month >= yearmonth("2023 Jan"), Month <= yearmonth("2024 Dec"))
+
+fc_comp %>%
+  autoplot(level = 0) +
+  geom_line(data = abs_recent, aes(x = Month, y = Turnover), color = "black", size = 0.8) +
+  facet_wrap(~.model) +
+  labs(title = "Forecast vs Actuals (2023–2024)",
+       subtitle = "Actual Turnover in Black, Forecast in Color",
+       y = "Turnover ($m)",
+       x = "Month") +
+  theme_minimal()
+
+```
+
+Overall, both models captured the seasonality and trend in the data reasonably well, but some differences were observed in forecast accuracy:
+
+- The ARIMA model was a lot more accurate predicting the actual turnover during 2023, being slighlty off dring 2024
+- The ETS model produced forecasts that seemes more closely aligned with the seasonal fluctuations visible in the data during 2023, though it too is also slighlty inaccurate in foreacting 2024 values.
+- From visual inspection the ETS model tended to track the actual values only slighlty more accurately, following the peak of 2024 at the end of the year moreso than the ARIMA
+
+Overall while the ETS model performed better, both models were generally reliable and are quite similar in appearance 
+
+
+
+## Q11
+
+
+ARIMA Model
+Benefits:
+
+- Captures complex non-seasonal and seasonal temporal dependencies.
+- Often more accurate when seasonal patterns are stable but not perfectly regular.
+- Can handle cycles.
+- Can handle dynamic regression
+
+Limitations:
+
+- Needs the data to be stationary or transformed accordingly (e.g., log, difference).
+- Can struggle with irregular seasonality or sudden changes (e.g., pandemic impact).
+- Can struggle with forecasting
+
+
+ETS Model
+
+Benefits:
+
+- Automatically captures trend and seasonality, often more robust to data irregularities.
+- Good for short-term forecasting when patterns are smooth and regular.
+- Easier to interpret and tune.
+
+
+Limitations:
+
+- Less flexible than ARIMA if data has irregular shocks or multiple seasonalities.
+- May overfit if the data contains outliers or structural changes.
+- Structural changes (eg. GFC and COVID) are not explicitly modeled. Sudden shifts in consumer behaviour (eg. saving money and lockdowns) may reduce model reliability.
+- Assumes seasonal pattern stability: ETS assumes constant seasonal patterns, but retail patterns may evolve (e.g. online shopping growth).
+- Unlike ARIMA, cannot handle cycles
+- Unlike ARIMA, cannot handle dynamic regression
+- Like ARIMA can struggle with forecasting
+
+
