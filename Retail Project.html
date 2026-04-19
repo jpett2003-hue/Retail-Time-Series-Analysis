@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5153/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jordan Pett">
+
+<title>Retail Project</title>
+<style class="anchorjs"></style><style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="./Retail Project_files/clipboard.min.js.download"></script>
+<script src="./Retail Project_files/quarto.js.download"></script>
+<script src="./Retail Project_files/popper.min.js.download"></script>
+<script src="./Retail Project_files/tippy.umd.min.js.download"></script>
+<script src="./Retail Project_files/anchor.min.js.download"></script>
+<link href="./Retail Project_files/tippy.css" rel="stylesheet">
+<link href="./Retail Project_files/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="./Retail Project_files/bootstrap.min.js.download"></script>
+<link href="./Retail Project_files/bootstrap-icons.css" rel="stylesheet">
+<link href="./Retail Project_files/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+<style>.ansi-display{font-family:monospace;white-space:pre-wrap;--ansiBlack: #000000;--ansiRed: #cd3131;--ansiGreen: #00BC00;--ansiYellow: #949800;--ansiBlue: #0451a5;--ansiMagenta: #bc05bc;--ansiCyan: #0598bc;--ansiWhite: #555555;--ansiBrightBlack: #666666;--ansiBrightRed: #cd3131;--ansiBrightGreen: #14CE14;--ansiBrightYellow: #b5ba00;--ansiBrightBlue: #0451a5;--ansiBrightMagenta: #bc05bc;--ansiBrightCyan: #0598bc;--ansiBrightWhite: #a5a5a5}.dark-mode .ansi-display{--ansiBlack: #000000;--ansiRed: #cd3131;--ansiGreen: #0DBC79;--ansiYellow: #e5e510;--ansiBlue: #2472c8;--ansiMagenta: #bc3fbc;--ansiCyan: #11a8cd;--ansiWhite: #e5e5e5;--ansiBrightBlack: #666666;--ansiBrightRed: #f14c4c;--ansiBrightGreen: #23d18b;--ansiBrightYellow: #f5f543;--ansiBrightBlue: #3b8eea;--ansiBrightMagenta: #d670d6;--ansiBrightCyan: #29b8db;--ansiBrightWhite: #e5e5e5}@keyframes ansi-displaly-run-blink{50%{opacity:0}}.fui-FluentProvider h2{border-bottom:none;padding-bottom:0}</style><style data-make-styles-bucket="d" data-priority="0"></style><style id="fui-FluentProviderr0"></style></head>
+
+<body class="fullcontent quarto-light" data-tabster="{&quot;root&quot;:{}}">
+
+<i tabindex="0" role="none" data-tabster-dummy="" aria-hidden="true" style="position: fixed; height: 1px; width: 1px; opacity: 0.001; z-index: -1; content-visibility: hidden; top: 0px; left: 0px;"></i><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Retail Project</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jordan Pett </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="q1-and-2" class="level1">
+<h1>Q1 and 2</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="http://localhost:5153/#cb1-1" aria-hidden="true" tabindex="-1"></a>retail <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="http://localhost:5153/#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>(Turnover) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="./Retail Project_files/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can see the plot has an upward trend until roughly 2008-2009, where Turnover drastically drops. This matches around the time of the 2008 financial crisis. There is also a large dip around the COVID-19 outbreak (2020-2021). However it quickly bounces back this time, potentially due to shoppers adapting and choosing to purchase online.</p>
+<p>We can also see increasing variability as time passes.</p>
+<p>The plot shows regular repeating patterns, indicating seasonal effects.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="http://localhost:5153/#cb2-1" aria-hidden="true" tabindex="-1"></a>retail <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="http://localhost:5153/#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_season</span>(Turnover)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="./Retail Project_files/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Strong seasonality appears to be present, with turnover starting to increase at the end of the year during the holiday period, as well as the middle of year.</p>
+<p>There appears to be a peak in turnover at the end of the year, and a slightly lower peak in the middle during June. The peak at the end of the year makes sense given that turnover is generally higher during holiday period.</p>
+<p>The overall trend suggests growth in turnover over time, with turnover steadily increasing every month over the years. This aligns with the long-term upward trend seen in the previous time series plot.</p>
+<p>More recent years (2021, 2011) show more volatility and variability compared to earlier years (1991, 2001), supporting the observation made from observing the previous plot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="http://localhost:5153/#cb3-1" aria-hidden="true" tabindex="-1"></a>retail <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="http://localhost:5153/#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_subseries</span>(Turnover)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="./Retail Project_files/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Each month follows an increasing trend over time. This confirms that retail turnover is growing consistently, regardless of the month.</p>
+<p>The December and November panels shows the highest peaks, reinforcing the holiday shopping effect. This suggests a strong seasonal peak in retail sales.</p>
+<p>Each month appears to have similar behaviour throughout the decades. Strong seasonality is apparent.</p>
+</section>
+<section id="q3" class="level1">
+<h1>Q3</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="http://localhost:5153/#cb4-1" aria-hidden="true" tabindex="-1"></a>retail <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="http://localhost:5153/#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">features</span>(Turnover, <span class="at">features =</span> guerrero) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="http://localhost:5153/#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(lambda_guerrero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  lambda_guerrero
+            &lt;dbl&gt;
+1          0.0172</code></pre>
+</div>
+</div>
+<p>This means that for the given Turnover time series, the Guerrero method suggests a Box-Cox transformation parameter (λ lambda) of approximately 0.017.</p>
+<p>With the λ lambda parameter being close to 0, we should use a log transformation since it should be most appropriate for variance stabilisation.</p>
+<p>Now we will apply Box-Cox transformation using the given lambda value.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="http://localhost:5153/#cb6-1" aria-hidden="true" tabindex="-1"></a>retail_bc <span class="ot">&lt;-</span> retail <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="http://localhost:5153/#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">BoxCox_Turnover =</span> <span class="fu">box_cox</span>(Turnover, <span class="at">lambda =</span> <span class="fl">0.017</span>))</span>
+<span id="cb6-3"><a href="http://localhost:5153/#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="http://localhost:5153/#cb6-4" aria-hidden="true" tabindex="-1"></a>retail_bc <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="http://localhost:5153/#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Month, Turnover, BoxCox_Turnover) <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="http://localhost:5153/#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Turnover, BoxCox_Turnover)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-7"><a href="http://localhost:5153/#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>(value) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="http://localhost:5153/#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>name, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="http://localhost:5153/#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Box-Cox Transformed Turnover vs Original"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="./Retail Project_files/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The plot has a noticeably more stable variance over time compared to the original data. This confirms that the Box-Cox transformation is effective in stabilising the variance, thus addressing heteroskedasticity.</p>
+</section>
+<section id="q4" class="level1">
+<h1>Q4</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="http://localhost:5153/#cb7-1" aria-hidden="true" tabindex="-1"></a>dcomp <span class="ot">&lt;-</span> retail_bc <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="http://localhost:5153/#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">model</span>(<span class="at">stl =</span> <span class="fu">STL</span>(BoxCox_Turnover <span class="sc">~</span> <span class="fu">trend</span>(<span class="at">window =</span> <span class="dv">13</span>) <span class="sc">+</span> <span class="fu">season</span>(<span class="at">window =</span> <span class="st">"periodic"</span>), <span class="at">robust =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb7-3"><a href="http://localhost:5153/#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">components</span>(dcomp) <span class="sc">%&gt;%</span> autoplot <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"STL decompisition: Turnover"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="./Retail Project_files/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The top panel of the STL decompisition shows a general upward trend and potential seasonality</p>
+<p>The second panel shows there are periods with slight dips, but there is general upward movement in the trend with slight variation</p>
+<p>Setting trend(window = 13) smooths over roughly a year. A 13-month window for the trend component used to smooth short-term fluctuations while preserving the long-term trend.</p>
+<p>The third panel shows consistent seasonality, steadily increasing until roughly April where it dips slightly, to be followed up with another upward trend until roughly October, where it drastically decreases</p>
+<p>With ‘robust = TRUE’, we have ensured that the occasional unusual observations will not affect the estimates of the trend-cycle and seasonal components.They will, however, affect the remainder component.</p>
+<p>The fourth panel appears that the remainder component could be white noise, with a few spikes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="http://localhost:5153/#cb8-1" aria-hidden="true" tabindex="-1"></a>residuals_tsibble <span class="ot">&lt;-</span> <span class="fu">components</span>(dcomp) <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="http://localhost:5153/#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(remainder) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="http://localhost:5153/#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tsibble</span>()</span>
+<span id="cb8-4"><a href="http://localhost:5153/#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="http://localhost:5153/#cb8-5" aria-hidden="true" tabindex="-1"></a>residuals_acf <span class="ot">&lt;-</span> residuals_tsibble <span class="sc">%&gt;%</span> </span>
+<span id="cb8-6"><a href="http://localhost:5153/#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ACF</span>(remainder)</span>
+<span id="cb8-7"><a href="http://localhost:5153/#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="http://localhost:5153/#cb8-8" aria-hidden="true" tabindex="-1"></a>residuals_acf <span class="sc">%&gt;%</span> </span>
+<span id="cb8-9"><a href="http://localhost:5153/#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>() <span class="sc">+</span> </span>
+<span id="cb8-10"><a href="http://localhost:5153/#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"White Noise Test"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="./Retail Project_files/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Since some of the autocorrelation coefficients lie outside these limits, we can confirm that the data is not white noise.</p>
+</section>
+<section id="q5" class="level1">
+<h1>Q5</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="http://localhost:5153/#cb9-1" aria-hidden="true" tabindex="-1"></a>fit5<span class="fl">.2</span> <span class="ot">&lt;-</span> retail_bc <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="http://localhost:5153/#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">model</span>(</span>
+<span id="cb9-3"><a href="http://localhost:5153/#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">auto =</span> <span class="fu">ARIMA</span>(BoxCox_Turnover, <span class="at">stepwise =</span> <span class="cn">FALSE</span>, <span class="at">approximation =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb9-4"><a href="http://localhost:5153/#cb9-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-5"><a href="http://localhost:5153/#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">report</span>(fit5<span class="fl">.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Series: BoxCox_Turnover 
+Model: ARIMA(1,0,1)(0,1,1)[12] w/ drift 
+
+Coefficients:
+         ar1      ma1     sma1  constant
+      0.9565  -0.4043  -0.8120    0.0018
+s.e.  0.0160   0.0472   0.0356    0.0004
+
+sigma^2 estimated as 0.005622:  log likelihood=554.21
+AIC=-1098.41   AICc=-1098.29   BIC=-1077.58</code></pre>
+</div>
+</div>
+<p>The ARIMA() function uses unitroot_nsdiffs() to determine D, (the number of seasonal differences to use), and unitroot_ndiffs() to determine d (the number of ordinary differences to use), when these are not specified. The selection of the other model parameters (p,q,P and Q) are all determined by minimizing the AICc, as with non-seasonal ARIMA models.</p>
+<p>In any case, the output has determined that no seasonal and 1 ordinary difference is most optimal.</p>
+<p>However as seen below, when we speicically use unitroot_nsdiffs() and unitroot_nsdiffs(), we get different results:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="http://localhost:5153/#cb11-1" aria-hidden="true" tabindex="-1"></a>retail_bc <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="http://localhost:5153/#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">features</span>(BoxCox_Turnover, unitroot_nsdiffs) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="http://localhost:5153/#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(nsdiffs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  nsdiffs
+    &lt;int&gt;
+1       1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="http://localhost:5153/#cb13-1" aria-hidden="true" tabindex="-1"></a>retail_bc <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="http://localhost:5153/#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">features</span>(BoxCox_Turnover, unitroot_ndiffs) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="http://localhost:5153/#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(ndiffs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  ndiffs
+   &lt;int&gt;
+1      1</code></pre>
+</div>
+</div>
+<p>Despite this result showing 1 difference of each, since model fitting process found that the model performed better without seasonal differencing, we will still use the 0 and 1 differences selected automatically.</p>
+</section>
+<section id="q6-and-7" class="level1">
+<h1>Q6 and 7</h1>
+<p>To create a short-list of appropriate ARIMA and ETS models, we will follow the following methodology :</p>
+<ul>
+<li><p>Step 1: The full dataset will be split into a training set and a test set. The training set will include all observations up to December 2020, and the test set will consist of the final 24 months of data: January 2021 to December 2022.</p></li>
+<li><p>Step 2: Rather than manually testing many different combinations, automated functions ARIMA() and ETS() were used to identify optimal models based on AIC.</p></li>
+<li><p>Step 3: For the models residual diagnostics is conducted using ljung-Box tests to ensure no significant autocorrelation remains in residuals. In addition time plots and ACF plots of residuals are also used to check for randomness and constant variance.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="http://localhost:5153/#cb15-1" aria-hidden="true" tabindex="-1"></a>retail_train <span class="ot">&lt;-</span> retail_bc <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Month <span class="sc">&lt;</span> <span class="fu">yearmonth</span>(<span class="st">"2021 Jan"</span>))</span>
+<span id="cb15-2"><a href="http://localhost:5153/#cb15-2" aria-hidden="true" tabindex="-1"></a>retail_test <span class="ot">&lt;-</span> retail_bc <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Month <span class="sc">&gt;=</span> <span class="fu">yearmonth</span>(<span class="st">"2021 Jan"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The output below shows the model selected and estimated by ARIMA(). The ARIMA model does well in capturing all the dynamics in the data as the residuals seem to be white noise.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="http://localhost:5153/#cb16-1" aria-hidden="true" tabindex="-1"></a>fit_arima <span class="ot">&lt;-</span> retail_train <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="http://localhost:5153/#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">model</span>(<span class="at">ARIMA =</span> <span class="fu">ARIMA</span>(BoxCox_Turnover))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in sqrt(diag(best$var.coef)): NaNs produced</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="http://localhost:5153/#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report</span>(fit_arima)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Series: BoxCox_Turnover 
+Model: ARIMA(1,0,1)(2,1,2)[12] w/ drift 
+
+Coefficients:
+         ar1      ma1     sar1    sar2     sma1    sma2  constant
+      0.9540  -0.3997  -0.3139  0.0183  -0.4832  -0.248    0.0024
+s.e.  0.0174   0.0496      NaN  0.0624      NaN     NaN    0.0006
+
+sigma^2 estimated as 0.005697:  log likelihood=525.16
+AIC=-1034.32   AICc=-1034   BIC=-1001.39</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="http://localhost:5153/#cb20-1" aria-hidden="true" tabindex="-1"></a>fit_arima <span class="sc">%&gt;%</span> <span class="fu">gg_tsresiduals</span>(<span class="at">lag_max =</span> <span class="dv">24</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="./Retail Project_files/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Looking at the residual plots, we can see that none of the autocorrelation coefficients lie outside the bounds of the ACF, meaning the the series is most likely white noise.</p>
+<p>We can confirm whther its white noise with a Ljung-Box test below</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="http://localhost:5153/#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(fit_arima) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="http://localhost:5153/#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">features</span>(.innov, ljung_box, <span class="at">lag =</span> <span class="dv">12</span>, <span class="at">dof =</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-3"><a href="http://localhost:5153/#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(.model<span class="sc">:</span>lb_pvalue)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .model lb_stat lb_pvalue
+  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 ARIMA     10.0     0.123</code></pre>
+</div>
+</div>
+<p>A Ljung-Box test (setting K = 6) returns a p-value larger than 0.05. This also confirms that the residuals are similar to white noise. 12 lags were selected to represent 12 months, a full year of lags.</p>
+<p>The output below also shows the ETS model selected and estimated by ETS(). This model also does well in capturing all the dynamics in the data, as the residuals similarly appear to be white noise.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="http://localhost:5153/#cb23-1" aria-hidden="true" tabindex="-1"></a>fit_ets <span class="ot">&lt;-</span> retail_train <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="http://localhost:5153/#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">model</span>(<span class="at">ETS =</span> <span class="fu">ETS</span>(BoxCox_Turnover))</span>
+<span id="cb23-3"><a href="http://localhost:5153/#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="http://localhost:5153/#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">report</span>(fit_ets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Series: BoxCox_Turnover 
+Model: ETS(A,Ad,A) 
+  Smoothing parameters:
+    alpha = 0.5283235 
+    beta  = 0.0001014108 
+    gamma = 0.1248747 
+    phi   = 0.9135705 
+
+  Initial states:
+    l[0]       b[0]        s[0]      s[-1]       s[-2]    s[-3]      s[-4]
+ 2.77382 0.06284059 -0.06855248 -0.1541766 -0.08486615 0.171497 0.06967224
+     s[-5]      s[-6]      s[-7]     s[-8]     s[-9]     s[-10]     s[-11]
+ 0.0449465 0.02646891 0.02840913 0.0227681 0.0211911 0.03685407 -0.1142118
+
+  sigma^2:  0.0057
+
+     AIC     AICc      BIC 
+475.7914 477.3251 550.3481 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="http://localhost:5153/#cb25-1" aria-hidden="true" tabindex="-1"></a>fit_ets <span class="sc">%&gt;%</span> </span>
+<span id="cb25-2"><a href="http://localhost:5153/#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gg_tsresiduals</span>(<span class="at">lag_max =</span> <span class="dv">24</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="./Retail Project_files/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Looking at the residual plots, we can see that none of the autocorrelation coefficients lie outside the bounds of the ACF, meaning the the series is most likely white noise.</p>
+<p>We can confirm whether its white noise with a Ljung-Box test below</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="http://localhost:5153/#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(fit_ets) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="http://localhost:5153/#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">features</span>(.innov, ljung_box, <span class="at">lag =</span> <span class="dv">12</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-3"><a href="http://localhost:5153/#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(.model<span class="sc">:</span>lb_pvalue)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .model lb_stat lb_pvalue
+  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 ETS       15.9     0.196</code></pre>
+</div>
+</div>
+<p>A Ljung-Box test test returns a p-value larger than 0.05. This also confirms that the residuals are similar to white noise.</p>
+<p>The output below evaluates the forecasting performance of the two competing models over the test and training set. In this case the ARIMA model seems to be the more accurate model based on the test set RMSE, MAPE and MASE.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="http://localhost:5153/#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(</span>
+<span id="cb28-2"><a href="http://localhost:5153/#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glance</span>(fit_arima),</span>
+<span id="cb28-3"><a href="http://localhost:5153/#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glance</span>(fit_ets)</span>
+<span id="cb28-4"><a href="http://localhost:5153/#cb28-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">select</span>(.model, AIC, AICc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  .model    AIC   AICc
+  &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+1 ARIMA  -1034. -1034.
+2 ETS      476.   477.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="http://localhost:5153/#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(</span>
+<span id="cb30-2"><a href="http://localhost:5153/#cb30-2" aria-hidden="true" tabindex="-1"></a>    fit_arima <span class="sc">%&gt;%</span>  <span class="fu">accuracy</span>(),</span>
+<span id="cb30-3"><a href="http://localhost:5153/#cb30-3" aria-hidden="true" tabindex="-1"></a>    fit_ets <span class="sc">%&gt;%</span> <span class="fu">accuracy</span>(),</span>
+<span id="cb30-4"><a href="http://localhost:5153/#cb30-4" aria-hidden="true" tabindex="-1"></a>    fit_arima <span class="sc">%&gt;%</span> <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">24</span>) <span class="sc">%&gt;%</span>  <span class="fu">accuracy</span>(retail_test),</span>
+<span id="cb30-5"><a href="http://localhost:5153/#cb30-5" aria-hidden="true" tabindex="-1"></a>    fit_ets <span class="sc">%&gt;%</span> <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">24</span>) <span class="sc">%&gt;%</span>  <span class="fu">accuracy</span>(retail_test)</span>
+<span id="cb30-6"><a href="http://localhost:5153/#cb30-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>State, <span class="sc">-</span>Industry, <span class="sc">-</span>ME, <span class="sc">-</span>MPE, <span class="sc">-</span>ACF1, <span class="sc">-</span>MASE, <span class="sc">-</span>RMSSE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+  .model .type      RMSE    MAE  MAPE
+  &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 ARIMA  Training 0.0739 0.0558  1.45
+2 ETS    Training 0.0744 0.0562  1.47
+3 ARIMA  Test     0.117  0.0986  2.06
+4 ETS    Test     0.137  0.119   2.49</code></pre>
+</div>
+</div>
+<p>AIC/AICc values are used to compare model fit, with lower values indicating a better fitting model. The ARIMA model has a lower AIC/AICc than the ETS model, suggesting its overwhelmingly better in terms of fit to the data.</p>
+<p>On the training set, ARIMA performs a better than ETS across all metrics. However, the differences are minimal, indicating that both models fit the training data similarly well.</p>
+<p>Once again on the test set (which reflects forecast accuracy), ARIMA again outperforms ETS by a slight but consistent margin across all 3 metrics.</p>
+<p>ARIMA is the better model overall, both in-sample and out-of-sample. While the differences aren’t too large, ARIMA is more accurate, especially on the test set, which is more important for forecasting performance. This aligns with the previous analysis of model fit, where ARIMA was also superior.</p>
+</section>
+<section id="q8" class="level1">
+<h1>Q8</h1>
+<p>Based on the results, especially the test sets, the ARIMA model gives slightly better forecasts than the ETS model. It achieved lower values for all key accuracy metrics on the test set, indicating more accurate predictions. Although the differences are small, ARIMA consistently outperformed ETS on all measures, making it the preferred model for forecasting this data.</p>
+</section>
+<section id="q9" class="level1">
+<h1>Q9</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="http://localhost:5153/#cb32-1" aria-hidden="true" tabindex="-1"></a>retail_bc <span class="ot">&lt;-</span> retail <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="http://localhost:5153/#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">BoxCox_Turnover =</span> <span class="fu">box_cox</span>(Turnover, <span class="at">lambda =</span> <span class="fl">0.017</span>))</span>
+<span id="cb32-3"><a href="http://localhost:5153/#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="http://localhost:5153/#cb32-4" aria-hidden="true" tabindex="-1"></a>fit_full_arima <span class="ot">&lt;-</span> retail <span class="sc">%&gt;%</span> <span class="fu">model</span>(<span class="at">ARIMA =</span> <span class="fu">ARIMA</span>(Turnover))</span>
+<span id="cb32-5"><a href="http://localhost:5153/#cb32-5" aria-hidden="true" tabindex="-1"></a>fit_full_ets <span class="ot">&lt;-</span> retail <span class="sc">%&gt;%</span> <span class="fu">model</span>(<span class="at">ETS =</span> <span class="fu">ETS</span>(Turnover))</span>
+<span id="cb32-6"><a href="http://localhost:5153/#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="http://localhost:5153/#cb32-7" aria-hidden="true" tabindex="-1"></a>fc_arima <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fit_full_arima, <span class="at">h =</span> <span class="st">"24 months"</span>) </span>
+<span id="cb32-8"><a href="http://localhost:5153/#cb32-8" aria-hidden="true" tabindex="-1"></a>fc_ets <span class="ot">&lt;-</span> <span class="fu">forecast</span>(fit_full_ets, <span class="at">h =</span> <span class="st">"24 months"</span>) </span>
+<span id="cb32-9"><a href="http://localhost:5153/#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="http://localhost:5153/#cb32-10" aria-hidden="true" tabindex="-1"></a>all_fc <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(fc_arima, fc_ets)</span>
+<span id="cb32-11"><a href="http://localhost:5153/#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="http://localhost:5153/#cb32-12" aria-hidden="true" tabindex="-1"></a>all_fc <span class="sc">%&gt;%</span></span>
+<span id="cb32-13"><a href="http://localhost:5153/#cb32-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>(retail) <span class="sc">+</span></span>
+<span id="cb32-14"><a href="http://localhost:5153/#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"24-Month Forecasts using Full Data"</span>,</span>
+<span id="cb32-15"><a href="http://localhost:5153/#cb32-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Retail Turnover ($m)"</span>,</span>
+<span id="cb32-16"><a href="http://localhost:5153/#cb32-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Month"</span>) <span class="sc">+</span></span>
+<span id="cb32-17"><a href="http://localhost:5153/#cb32-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>.model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="./Retail Project_files/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Can’t really see too much so we’ll focus on 2020 Jan to 2024 Dec, which is the last 24 months of actual data and 24 months of forecasts</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="http://localhost:5153/#cb33-1" aria-hidden="true" tabindex="-1"></a>retail_2020 <span class="ot">&lt;-</span> retail <span class="sc">%&gt;%</span> <span class="fu">filter_index</span>(<span class="st">"2020 Jan"</span> <span class="sc">~</span> .)</span>
+<span id="cb33-2"><a href="http://localhost:5153/#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="http://localhost:5153/#cb33-3" aria-hidden="true" tabindex="-1"></a>all_fc <span class="sc">%&gt;%</span></span>
+<span id="cb33-4"><a href="http://localhost:5153/#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>(retail_2020) <span class="sc">+</span></span>
+<span id="cb33-5"><a href="http://localhost:5153/#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb33-6"><a href="http://localhost:5153/#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Retail Turnover Forecasts (24 Months Ahead)"</span>,</span>
+<span id="cb33-7"><a href="http://localhost:5153/#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Turnover ($m)"</span>,</span>
+<span id="cb33-8"><a href="http://localhost:5153/#cb33-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Month"</span></span>
+<span id="cb33-9"><a href="http://localhost:5153/#cb33-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb33-10"><a href="http://localhost:5153/#cb33-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(.model), <span class="at">scales =</span> <span class="st">"free_y"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="./Retail Project_files/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Filtering the data allowed us to see the models more clearly, allowing us to more effectively compare them and draw conclusions</p>
+</section>
+<section id="q10" class="level1">
+<h1>Q10</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="http://localhost:5153/#cb34-1" aria-hidden="true" tabindex="-1"></a>fc_comp <span class="ot">&lt;-</span> all_fc <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="http://localhost:5153/#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Month <span class="sc">&gt;=</span> <span class="fu">yearmonth</span>(<span class="st">"2023 Jan"</span>), Month <span class="sc">&lt;=</span> <span class="fu">yearmonth</span>(<span class="st">"2024 Dec"</span>))</span>
+<span id="cb34-3"><a href="http://localhost:5153/#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="http://localhost:5153/#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Not sure how this is supposed to be marked if you dont have the file but its using Jan 2023 to Dec 2024 from the abs website that i downloaded</span></span>
+<span id="cb34-5"><a href="http://localhost:5153/#cb34-5" aria-hidden="true" tabindex="-1"></a>abs_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"ABS data.xlsx"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb34-6"><a href="http://localhost:5153/#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Month =</span> <span class="fu">yearmonth</span>(Month))</span>
+<span id="cb34-7"><a href="http://localhost:5153/#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="http://localhost:5153/#cb34-8" aria-hidden="true" tabindex="-1"></a>abs_recent <span class="ot">&lt;-</span> abs_data <span class="sc">%&gt;%</span></span>
+<span id="cb34-9"><a href="http://localhost:5153/#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Month <span class="sc">&gt;=</span> <span class="fu">yearmonth</span>(<span class="st">"2023 Jan"</span>), Month <span class="sc">&lt;=</span> <span class="fu">yearmonth</span>(<span class="st">"2024 Dec"</span>))</span>
+<span id="cb34-10"><a href="http://localhost:5153/#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="http://localhost:5153/#cb34-11" aria-hidden="true" tabindex="-1"></a>fc_comp <span class="sc">%&gt;%</span></span>
+<span id="cb34-12"><a href="http://localhost:5153/#cb34-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>(<span class="at">level =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb34-13"><a href="http://localhost:5153/#cb34-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> abs_recent, <span class="fu">aes</span>(<span class="at">x =</span> Month, <span class="at">y =</span> Turnover), <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb34-14"><a href="http://localhost:5153/#cb34-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>.model) <span class="sc">+</span></span>
+<span id="cb34-15"><a href="http://localhost:5153/#cb34-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Forecast vs Actuals (2023–2024)"</span>,</span>
+<span id="cb34-16"><a href="http://localhost:5153/#cb34-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Actual Turnover in Black, Forecast in Color"</span>,</span>
+<span id="cb34-17"><a href="http://localhost:5153/#cb34-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Turnover ($m)"</span>,</span>
+<span id="cb34-18"><a href="http://localhost:5153/#cb34-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Month"</span>) <span class="sc">+</span></span>
+<span id="cb34-19"><a href="http://localhost:5153/#cb34-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="./Retail Project_files/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Overall, both models captured the seasonality and trend in the data reasonably well, but some differences were observed in forecast accuracy:</p>
+<ul>
+<li>The ETS model produced forecasts that seemes more closely aligned with the seasonal fluctuations visible in the data during 2023, though it too is also slighlty inaccurate in foreacting 2024 values.</li>
+<li>The ARIMA model was a lot more accurate forecasting the actual turnover in 2023 than 2024 ARIMA forecasts.</li>
+<li>From visual inspection the ETS model tended to track the actual values only slighlty more accurately, following the peak of 2024 at the end of the year moreso than the ARIMA</li>
+</ul>
+<p>Overall while the ETS model performed better, both models were generally reliable and are quite similar in appearance</p>
+<section id="q11" class="level2">
+<h2 class="anchored" data-anchor-id="q11">Q11<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="http://localhost:5153/#q11" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h2>
+<p>ARIMA Model</p>
+<p>Benefits:</p>
+<ul>
+<li>Captures complex non-seasonal and seasonal temporal dependencies.</li>
+<li>Often more accurate when seasonal patterns are stable but not perfectly regular.</li>
+<li>Can handle cycles.</li>
+<li>Can handle dynamic regression</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>Needs the data to be stationary or transformed accordingly (e.g., log, difference).</li>
+<li>Can struggle with irregular seasonality or sudden changes (e.g., Covids impact).</li>
+<li>Can struggle with forecasting</li>
+</ul>
+<p>ETS Model</p>
+<p>Benefits:</p>
+<ul>
+<li>Automatically captures trend and seasonality, often more robust to data irregularities.</li>
+<li>Good for short-term forecasting when patterns are smooth and regular.</li>
+<li>Easier to interpret and tune.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>Less flexible than ARIMA if data has irregular shocks or multiple seasonalities.</li>
+<li>May overfit if the data contains outliers or structural changes.</li>
+<li>Structural changes (eg. GFC and COVID) are not explicitly modeled. Sudden shifts in consumer behaviour (eg. saving money and lockdowns) may reduce model reliability.</li>
+<li>Assumes seasonal pattern stability: ETS assumes constant seasonal patterns, but retail patterns may evolve (e.g.&nbsp;online shopping growth).</li>
+<li>Unlike ARIMA, cannot handle cycles</li>
+<li>Unlike ARIMA, cannot handle dynamic regression</li>
+<li>Like ARIMA can struggle with forecasting</li>
+</ul>
+<hr>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="http://localhost:5153/#section" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h2>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+
+<script>window.backupDefine = window.define; window.define = undefined;</script>
+<script type="text/javascript" src="./Retail Project_files/quarto-preview.js.download"></script>
+<script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+<script type="text/javascript">
+  const options = {
+    origin: "",
+    search: "",
+    inputFile: "C:\Users\jpett\Downloads\Retail Project Jordan Pett.qmd",
+    isPresentation: false
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    window.QuartoPreview.init(options);
+  });
+</script>
+<div><div dir="ltr" class="fui-FluentProvider fui-FluentProviderr0 ___jdtuxv0 f19n0e5 fxugw4r f1o700av fk6fouc fkhj508 figsok6 f1i3iumi"></div></div><i tabindex="0" role="none" data-tabster-dummy="" aria-hidden="true" style="position: fixed; height: 1px; width: 1px; opacity: 0.001; z-index: -1; content-visibility: hidden; top: 0px; left: 0px;"></i></body></html>
